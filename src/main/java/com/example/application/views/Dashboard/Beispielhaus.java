@@ -11,13 +11,14 @@ import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
-import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 import com.vaadin.ui.TextArea;
 
 import java.util.Arrays;
 import java.util.List;
 
-@PageTitle("Beispielhaus")
+@Route(value = "beispielhaus") // gibt die route, aber wird nicht im dashboard angezeigt
+//@PageTitle("Beispielhaus")
 @CssImport(value = "./styles/views/beispielhaus/beispielhaus-view.css", include = "lumo-badge")
 @JsModule("@vaadin/vaadin-lumo-styles/badge.js")
 
@@ -73,7 +74,15 @@ public class Beispielhaus extends Div implements AfterNavigationObserver {
 
         //rechtebeschreibung
         TextArea hausbeschreibung = new TextArea();
-        hausbeschreibung.setValue("The quick brown fox jumps over the lazy dog.");
+        hausbeschreibung.setValue("Ort: Ort 1\n" +
+                "Personenzahl: 6\n" +
+                "Schlafzimmerzahl: 3\n" +
+                "Badezimmerzahl: 2\n" +
+                "Mindestaufenthaltsdauer: 3 Tage\n" +
+                "Wohnfläche: 90 m²\n" +
+                "Buchen\n" +
+                "Preis: 70 € / Übernachtung\n" +
+                "Bewertung");
         hausbeschreibung.setRows(10);
         hausbeschreibung.setSizeFull();
 
@@ -97,17 +106,17 @@ public class Beispielhaus extends Div implements AfterNavigationObserver {
         return card;
     }
 
-    //Mietwohnungen Anzeige
+    //Bilder des Hauses Anzeige
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
-        List<Musterhaus> musterhause = Arrays.asList( //
-                createMusterhaus("https://randomuser.me/api/portraits/men/42.jpg",
-                        "https://randomuser.me/api/portraits/men/42.jpg",
-                        "https://randomuser.me/api/portraits/men/42.jpg",
-                        "https://randomuser.me/api/portraits/men/42.jpg")
+        List<Musterhaus> bilder = Arrays.asList( //
+                createMusterhaus("https://pngimg.com/uploads/house/house_PNG50.png",
+                        "https://pngimg.com/uploads/house/house_PNG6.png",
+                        "https://pngimg.com/uploads/house/house_PNG50.png",
+                        "https://pngimg.com/uploads/tree/tree_PNG92786.png")
                 );
 
-        grid.setItems(musterhause);
+        grid.setItems(bilder);
 
     }
     private static Musterhaus createMusterhaus(String bild0,String bild1,String bild2,String bild3) {
@@ -117,7 +126,9 @@ public class Beispielhaus extends Div implements AfterNavigationObserver {
         m.setBild2(bild2);
         m.setBild3(bild3);
 
+
         return m;
     }
+
 }
 

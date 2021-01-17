@@ -17,6 +17,7 @@ import com.vaadin.flow.router.PageTitle;
 import java.util.Arrays;
 import java.util.List;
 
+
 @PageTitle("Home")
 @CssImport(value = "./styles/views/home/home-view.css", include = "lumo-badge")
 @JsModule("@vaadin/vaadin-lumo-styles/badge.js")

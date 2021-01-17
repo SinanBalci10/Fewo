@@ -11,7 +11,7 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-@Route("register")
+@Route("registrieren")
 public class RegisterView extends Composite {
 
     private final AuthService authService;

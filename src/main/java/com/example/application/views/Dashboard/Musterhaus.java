@@ -55,7 +55,7 @@ public class Musterhaus {
         this.post = post;
     }
 
-    public String getPreis(String preis) {
+    public String getPreis() {
         return preis;
     }
     public void setPreis(String preis) {

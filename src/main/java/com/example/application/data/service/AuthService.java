@@ -2,7 +2,6 @@ package com.example.application.data.service;
 
 import com.example.application.data.entity.Role;
 import com.example.application.data.entity.User;
-import com.example.application.views.Dashboard.Beispielhaus;
 import com.example.application.views.Dashboard.DashboardView;
 import com.example.application.views.EigeneFerienwohnung.EigeneFerienwohnungView;
 import com.example.application.views.KontoVerwalten.KontoVerwaltenView;
@@ -70,7 +69,7 @@ public class AuthService {
             routes.add(new AuthorizedRoute("nachrichtSenden", "Nachricht Senden", NachrichtSendenView.class));
             routes.add(new AuthorizedRoute("stornieren", "Stornieren", StornierenView.class));
           //  routes.add(new AuthorizedRoute("abmelden", "Abmelden", LogoutView.class));
-            routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", Beispielhaus.class));
+          //  routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", Beispielhaus.class));
 
         } else if (role.equals(Role.ADMIN)) {
             routes.add(new AuthorizedRoute("home", "Home", HomeView.class));
@@ -83,7 +82,7 @@ public class AuthService {
             routes.add(new AuthorizedRoute("nachrichtSenden", "Nachricht senden", NachrichtSendenView.class));
             routes.add(new AuthorizedRoute("stornieren", "Stornieren", StornierenView.class));
            // routes.add(new AuthorizedRoute("abmelden", "Abmelden", LogoutView.class))
-             routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", Beispielhaus.class));
+             //routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", Beispielhaus.class));
         }
 
         return routes;
