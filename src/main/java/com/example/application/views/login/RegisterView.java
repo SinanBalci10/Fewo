@@ -48,13 +48,13 @@ public class RegisterView extends Composite {
             Notification.show("Geben Sie eine Email ein");
         } else if (password1.isEmpty()) {
             Notification.show("Geben Sie ein Passwort ein");
-        } else if (password1.length() < 7) {
+        } else if (password1.length() < 8) {
             Notification.show("Das Passwort muss mindestens 8 Zeichen lang sein");
         } else if (!password1.equals(password2)) {
             Notification.show("Passwörter stimmen nicht überein");
         } else {
             authService.register(email, password1);
-            Notification.show("Check den log");
+            Notification.show("Link ist gesendet");
         }
     }
 }

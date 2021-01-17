@@ -12,7 +12,7 @@ import com.vaadin.flow.server.VaadinSession;
 public class MietverlaufView extends Composite<VerticalLayout> {
 
     public MietverlaufView() {
-        UI.getCurrent().getPage().setLocation("mietverlauf");
+        UI.getCurrent().getPage().setLocation("dashboard");
         VaadinSession.getCurrent().getSession().invalidate();
         VaadinSession.getCurrent().close();
     }

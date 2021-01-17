@@ -55,6 +55,7 @@ public class HomeView extends Div implements AfterNavigationObserver {
 
         Span name = new Span(person.getName());
         name.addClassName("name");
+
         Span date = new Span(person.getDate());
         date.addClassName("date");
         header.add(name, date);
@@ -70,6 +71,7 @@ public class HomeView extends Div implements AfterNavigationObserver {
         IronIcon likeIcon = new IronIcon("vaadin", "heart");
         Span likes = new Span(person.getLikes());
         likes.addClassName("likes");
+
         IronIcon commentIcon = new IronIcon("vaadin", "comment");
         Span comments = new Span(person.getComments());
         comments.addClassName("comments");

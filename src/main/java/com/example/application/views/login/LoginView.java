@@ -13,8 +13,8 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 
-@Route(value = "login")
 @PageTitle("Login")
+@Route(value = "login")
 @CssImport("./styles/views/login/login-view.css")
 public class LoginView extends Div {
 

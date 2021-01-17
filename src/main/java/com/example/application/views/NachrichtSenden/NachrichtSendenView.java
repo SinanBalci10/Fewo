@@ -12,7 +12,7 @@ import com.vaadin.flow.server.VaadinSession;
 public class NachrichtSendenView extends Composite<VerticalLayout> {
 
     public NachrichtSendenView() {
-        UI.getCurrent().getPage().setLocation("nachrichtSenden");
+        UI.getCurrent().getPage().setLocation("dashboard");
         VaadinSession.getCurrent().getSession().invalidate();
         VaadinSession.getCurrent().close();
     }

@@ -12,7 +12,7 @@ import com.vaadin.flow.server.VaadinSession;
 public class StornierenView extends Composite<VerticalLayout> {
 
     public StornierenView() {
-        UI.getCurrent().getPage().setLocation("stornieren");
+        UI.getCurrent().getPage().setLocation("dashboard");
         VaadinSession.getCurrent().getSession().invalidate();
         VaadinSession.getCurrent().close();
     }

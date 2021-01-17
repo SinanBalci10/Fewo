@@ -12,7 +12,7 @@ import com.vaadin.flow.server.VaadinSession;
 public class KontoVerwaltenView extends Composite<VerticalLayout> {
 
     public KontoVerwaltenView() {
-        UI.getCurrent().getPage().setLocation("kontoVerwalten");
+        UI.getCurrent().getPage().setLocation("dashboard");
         VaadinSession.getCurrent().getSession().invalidate();
         VaadinSession.getCurrent().close();
     }

@@ -1,5 +1,6 @@
 #header {
   height: var(--lumo-size-xl);
+  grid-column-gap: 200px;--spaltenabstand
 }
 #header img {
   border-radius: 50%;
@@ -10,7 +11,7 @@
   background-color: var(--lumo-contrast);
 }
 #header h1 {
-  font-size: var(--lumo-font-size-l);
+  font-size: var(--lumo-font-size-m);--kopgröße
   margin: 0;
 }
 #logo {
@@ -28,7 +29,7 @@
 }
 
 vaadin-tab {
-  font-size: var(--lumo-font-size-s);
+  font-size: var(--lumo-font-size-m);
   height: var(--lumo-size-l);
   font-weight: 600;
   color: var(--lumo-body-text-color);

@@ -12,7 +12,7 @@ import com.vaadin.flow.server.VaadinSession;
 public class PostfachView extends Composite<VerticalLayout> {
 
     public PostfachView() {
-        UI.getCurrent().getPage().setLocation("postfach");
+        UI.getCurrent().getPage().setLocation("dashboard");
         VaadinSession.getCurrent().getSession().invalidate();
         VaadinSession.getCurrent().close();
     }
