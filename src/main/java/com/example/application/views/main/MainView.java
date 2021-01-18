@@ -44,6 +44,7 @@ public class MainView extends AppLayout {
         addToDrawer(createDrawerContent(menu));
     }
 
+    //obere sicht (bla)
     private Component createHeaderContent() {
         HorizontalLayout layout = new HorizontalLayout();
         layout.setId("header");

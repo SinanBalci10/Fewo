@@ -54,7 +54,7 @@ public class AuthService {
                                 route.route, route.view, MainView.class));
     }
 
-    // im menu erscheinen lassen
+    // im menu links erscheinen lassen
     // wenn es nicht hier mit drin steht, aber in logoutView zu login navigiert, dann kannst du im url namen manuel ändern in "..8080/login"
     public List<AuthorizedRoute> getAuthorizedRoutes(Role role) {
         var routes = new ArrayList<AuthorizedRoute>();

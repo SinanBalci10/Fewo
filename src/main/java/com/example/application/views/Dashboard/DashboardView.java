@@ -26,7 +26,7 @@ import java.util.List;
 
 public class DashboardView extends Div implements AfterNavigationObserver {
 
-    Grid<Musterhaus> grid = new Grid<>();
+    Grid<MusterhausDashboard> grid = new Grid<>();
 
     public DashboardView() {
         setId("dashboard-view");
@@ -34,19 +34,45 @@ public class DashboardView extends Div implements AfterNavigationObserver {
         setSizeFull();
         grid.setHeight("100%");
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
-        grid.addComponentColumn(musterhaus -> createCard(musterhaus));
+        grid.addComponentColumn(musterhausDashboard -> createCard(musterhausDashboard));
         add(grid);
     }
 
 
+    //verscuhe suchleiste mit neuer karte hinzuzufügen
+//    private HorizontalLayout createCard() {
+//        HorizontalLayout card = new HorizontalLayout();
+//        card.addClassName("card");
+//        card.setSpacing(false);
+//        card.getThemeList().add("spacing-s");
+//
+//        VerticalLayout description = new VerticalLayout();
+//        description.addClassName("description");
+//        description.setSpacing(false);
+//        description.setPadding(false);
+//
+//        HorizontalLayout header = new HorizontalLayout();
+//        header.addClassName("header");
+//        header.setSpacing(false);
+//        header.getThemeList().add("spacing-s");
+//
+//        Span name = new Span("Häuser suchen");
+//        name.addClassName("name");
+//        header.add(name);
+//
+//
+//
+//       return card;
+//    }
 
-    private HorizontalLayout createCard(Musterhaus musterhaus) {
+    // einzelne karten kreieren
+    private HorizontalLayout createCard(MusterhausDashboard musterhausDashboard) {
         HorizontalLayout card = new HorizontalLayout();
         card.addClassName("card");
         card.setSpacing(false);
         card.getThemeList().add("spacing-s");
 
-
+        //layout von der beschreibung in der karte
         VerticalLayout description = new VerticalLayout();
         description.addClassName("description");
         description.setSpacing(false);
@@ -61,19 +87,19 @@ public class DashboardView extends Div implements AfterNavigationObserver {
 
         // bild des hauses
         Image image = new Image();
-        image.setSrc(musterhaus.getBild0());
+        image.setSrc(musterhausDashboard.getBild0());
 
         //name des hauses
-        Span name = new Span(musterhaus.getName());
+        Span name = new Span(musterhausDashboard.getName());
         name.addClassName("name");
         header.add(name); // name oben hinzufügen
 
         //beschreibung des hauses
-        Span post = new Span(musterhaus.getPost());
+        Span post = new Span(musterhausDashboard.getPost());
         post.addClassName("post");
 
         //preis des hauses
-        Span preis = new Span(musterhaus.getPreis());
+        Span preis = new Span(musterhausDashboard.getPreis());
         preis.addClassName("preis");
 
         //actions
@@ -84,7 +110,7 @@ public class DashboardView extends Div implements AfterNavigationObserver {
 
         //symbole
         IronIcon likesymbol = new IronIcon("vaadin", "star");
-        Span bewertung = new Span(musterhaus.getBewertung());
+        Span bewertung = new Span(musterhausDashboard.getBewertung());
         bewertung.addClassName("bewertung");
 
         // anzeigen klicken und navigieren zu haus
@@ -104,17 +130,18 @@ public class DashboardView extends Div implements AfterNavigationObserver {
     //Mietwohnungen Anzeige
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
-        List<Musterhaus> musterhause = Arrays.asList( //
-                createMusterhaus("https://pngimg.com/uploads/house/house_PNG50.png","Musterhaus 1", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
-                createMusterhaus("https://pngimg.com/uploads/house/house_PNG48.png","Musterhaus 2", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
-                createMusterhaus("https://pngimg.com/uploads/house/house_PNG61.png","Musterhaus 3", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5")
+        List<MusterhausDashboard> musterhäuser = Arrays.asList(
+                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG50.png","Musterhaus 1", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
+                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG50.png","Musterhaus 1", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
+                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG48.png","Musterhaus 2", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
+                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG61.png","Musterhaus 3", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5")
         );
 
-        grid.setItems(musterhause);
+        grid.setItems(musterhäuser);
 
     }
-    private static Musterhaus createMusterhaus(String bild0, String name, String post, String preis, String bewertung) {
-        Musterhaus m = new Musterhaus();
+    private static MusterhausDashboard createMusterhausDashboard(String bild0, String name, String post, String preis, String bewertung) {
+        MusterhausDashboard m = new MusterhausDashboard();
         m.setBild0(bild0);
         m.setName(name);
         m.setPost(post);
