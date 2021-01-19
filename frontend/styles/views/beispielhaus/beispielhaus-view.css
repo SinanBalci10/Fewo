@@ -25,10 +25,10 @@
   align-items: baseline;
 }
 
---.beispielhaus-view .name {
-  --font-size: var(--lumo-font-size-s);
-  --font-weight: bold;
---}
+.beispielhaus-view .name {
+  font-size: var(--lumo-font-size-xl);
+  font-weight: bold;
+}
 --.beispielhaus-view .date {
   --color: var(--lumo-tertiary-text-color);
   --font-size: var(--lumo-font-size-xs);

@@ -1,13 +1,13 @@
-.dashboard-view vaadin-grid {
+.musterhaus-view vaadin-grid {
   line-height: var(--lumo-line-height-m);
 }
 
-.dashboard-view vaadin-grid,
-.dashboard-view vaadin-grid-cell-content {
+.musterhaus-view vaadin-grid,
+.musterhaus-view vaadin-grid-cell-content {
   background-color: var(--lumo-contrast-10pct);
 }
 
-.dashboard-view .card {
+.musterhaus-view .card {
   background-color: var(--lumo-base-color);
   border-radius: var(--lumo-border-radius);
   box-shadow: var(--lumo-box-shadow-xs);
@@ -15,32 +15,34 @@
   display: block;
 }
 
-.dashboard-view img {
+.musterhaus-view img {
   border-radius: 50%;
   flex-shrink: 0;
   height: var(--lumo-size-xl);
   width: var(--lumo-size-xl);
 }
 
-.dashboard-view .header {
+.musterhaus-view .header {
   align-items: baseline;
 }
 
-.dashboard-view .uberschrift {
+.musterhaus-view .name {
   font-size: var(--lumo-font-size-xl);
   font-weight: bold;
 }
 
-.dashboard-view .filter {
-  font-size: var(--lumo-font-size-l);
-  font-weight: bold;
+.musterhaus-view .beschreibung {
+  color: var(--lumo-secondary-text-color);
+  font-size: var(--lumo-font-size-s);
+  margin-bottom: var(--lumo-space-s);
+  white-space: normal;
 }
 
-.dashboard-view .actions {
+.musterhaus-view .actions {
   align-items: center;
 }
 
-.dashboard-view iron-icon {
+.musterhaus-view iron-icon {
   color: var(--lumo-tertiary-text-color);
   height: calc(var(--lumo-icon-size-s) * 0.8);
   width: calc(var(--lumo-icon-size-s) * 0.8);

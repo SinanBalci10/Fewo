@@ -44,7 +44,7 @@ public class MainView extends AppLayout {
         addToDrawer(createDrawerContent(menu));
     }
 
-    //obere sicht (bla)
+
     private Component createHeaderContent() {
         HorizontalLayout layout = new HorizontalLayout();
         layout.setId("header");
@@ -55,6 +55,8 @@ public class MainView extends AppLayout {
         layout.add(new DrawerToggle());
         viewTitle = new H1();
         layout.add(viewTitle);
+
+        //obere sicht (blau)
         layout.add(new H1(""));
         layout.add(new H1("Max Mustaermannmieter"));
         layout.add(new Button("Abmelden", event -> {
@@ -88,6 +90,7 @@ public class MainView extends AppLayout {
         return tabs;
     }
 
+    // linke seite aufgelistet in componenten
     private Component[] createMenuItems() {
         var user = VaadinSession.getCurrent().getAttribute(User.class);
         return authService.getAuthorizedRoutes(user.getRole()).stream()

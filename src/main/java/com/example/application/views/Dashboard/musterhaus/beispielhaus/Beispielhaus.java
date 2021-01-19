@@ -1,6 +1,6 @@
-package com.example.application.views.Dashboard;
+package com.example.application.views.Dashboard.musterhaus.beispielhaus;
 
-public class Musterhaus {
+public class Beispielhaus {
 
     private String bild0;
     private String bild1;
@@ -8,7 +8,7 @@ public class Musterhaus {
     private String bild3;
 
 
-    public Musterhaus() {
+    public Beispielhaus() {
     }
 
 

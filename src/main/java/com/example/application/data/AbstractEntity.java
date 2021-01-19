@@ -4,6 +4,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+// definiert wie man id values, die primary keys und boolean generiert usw
+//überschreibt hashcode und equals
 @MappedSuperclass
 public abstract class AbstractEntity {
     private Integer id;

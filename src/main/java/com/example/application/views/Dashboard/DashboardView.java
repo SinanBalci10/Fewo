@@ -7,26 +7,26 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
 import java.util.Arrays;
 import java.util.List;
 
 
-@PageTitle("Dashboard")
+@PageTitle("Dashboard") // linke seite name
+@Route(value = "dashboard") // /dashboard rute um url
 @CssImport(value = "./styles/views/dashboard/dashboard-view.css", include = "lumo-badge")
 @JsModule("@vaadin/vaadin-lumo-styles/badge.js")
 
-public class DashboardView extends Div implements AfterNavigationObserver {
+public class DashboardView<sample> extends Div implements AfterNavigationObserver {
 
-    Grid<MusterhausDashboard> grid = new Grid<>();
+    Grid<Suchleiste> grid = new Grid<>();
 
     public DashboardView() {
         setId("dashboard-view");
@@ -38,35 +38,7 @@ public class DashboardView extends Div implements AfterNavigationObserver {
         add(grid);
     }
 
-
-    //verscuhe suchleiste mit neuer karte hinzuzufügen
-//    private HorizontalLayout createCard() {
-//        HorizontalLayout card = new HorizontalLayout();
-//        card.addClassName("card");
-//        card.setSpacing(false);
-//        card.getThemeList().add("spacing-s");
-//
-//        VerticalLayout description = new VerticalLayout();
-//        description.addClassName("description");
-//        description.setSpacing(false);
-//        description.setPadding(false);
-//
-//        HorizontalLayout header = new HorizontalLayout();
-//        header.addClassName("header");
-//        header.setSpacing(false);
-//        header.getThemeList().add("spacing-s");
-//
-//        Span name = new Span("Häuser suchen");
-//        name.addClassName("name");
-//        header.add(name);
-//
-//
-//
-//       return card;
-//    }
-
-    // einzelne karten kreieren
-    private HorizontalLayout createCard(MusterhausDashboard musterhausDashboard) {
+    private HorizontalLayout createCard(Suchleiste suchleiste) {
         HorizontalLayout card = new HorizontalLayout();
         card.addClassName("card");
         card.setSpacing(false);
@@ -84,70 +56,53 @@ public class DashboardView extends Div implements AfterNavigationObserver {
         header.setSpacing(false);
         header.getThemeList().add("spacing-s");
 
+        //überschrift der karte
+        Span uberschrift = new Span(suchleiste.getUberschrift());
+        uberschrift.addClassName("uberschrift");
+        header.add(uberschrift); // name oben hinzufügen
 
-        // bild des hauses
-        Image image = new Image();
-        image.setSrc(musterhausDashboard.getBild0());
+        //filtername der karte
+        Span filter = new Span(suchleiste.getFilter());
+        filter.addClassName("filter");
 
-        //name des hauses
-        Span name = new Span(musterhausDashboard.getName());
-        name.addClassName("name");
-        header.add(name); // name oben hinzufügen
+        //ort der karte
+        Span ort = new Span(suchleiste.getOrt());
+        ort.addClassName("ort");
 
-        //beschreibung des hauses
-        Span post = new Span(musterhausDashboard.getPost());
-        post.addClassName("post");
+        Span verfugbarkeit = new Span(suchleiste.getVerfugrbar());
+        verfugbarkeit.addClassName("verfugbarkeit");
 
-        //preis des hauses
-        Span preis = new Span(musterhausDashboard.getPreis());
-        preis.addClassName("preis");
+        Span personenzahl = new Span(suchleiste.getPersonenzahl());
+        personenzahl.addClassName("personenzahl");
 
-        //actions
-        HorizontalLayout actions = new HorizontalLayout();
-        actions.addClassName("actions");
-        actions.setSpacing(false);
-        actions.getThemeList().add("spacing-s");
-
-        //symbole
-        IronIcon likesymbol = new IronIcon("vaadin", "star");
-        Span bewertung = new Span(musterhausDashboard.getBewertung());
-        bewertung.addClassName("bewertung");
-
-        // anzeigen klicken und navigieren zu haus
-        Button anzeigen = new Button("Anzeigen", event -> {
-            UI.getCurrent().navigate("beispielhaus");
+        Button suchen = new Button("Suchen", event -> {
+            UI.getCurrent().navigate("musterhaus");
         });
 
-        // symbole sichtbar machen durch befehl add
-        actions.add(likesymbol, bewertung);
-        // beschreibung sichtbar machen durch dem befehl add
-        description.add(header, post,preis, actions);
+        description.add(header, filter, ort, verfugbarkeit, personenzahl);
         //die karte sichrbar machen (bild und beschreibungen)
-        card.add(image,description, anzeigen);
+        card.add(description, suchen);
         return card;
     }
 
-    //Mietwohnungen Anzeige
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
-        List<MusterhausDashboard> musterhäuser = Arrays.asList(
-                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG50.png","Musterhaus 1", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
-                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG50.png","Musterhaus 1", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
-                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG48.png","Musterhaus 2", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5"),
-                createMusterhausDashboard("https://pngimg.com/uploads/house/house_PNG61.png","Musterhaus 3", "6 Personen - 3 Schlafzimmer - 90 m²", "70€ / Nacht", "4/5")
+        List<Suchleiste> suchleistes = Arrays.asList(
+               createSuchleiste("Häuser suchen","Filter","Ort", "Verfügbarkeit","Personenzahl")
         );
 
-        grid.setItems(musterhäuser);
+        grid.setItems(suchleistes);
 
     }
-    private static MusterhausDashboard createMusterhausDashboard(String bild0, String name, String post, String preis, String bewertung) {
-        MusterhausDashboard m = new MusterhausDashboard();
-        m.setBild0(bild0);
-        m.setName(name);
-        m.setPost(post);
-        m.setPreis(preis);
-        m.setBewertung(bewertung);
 
-        return m;
+    private static Suchleiste createSuchleiste(String uberschrift, String filter, String ort, String verfugbar, String personenzahl) {
+        Suchleiste s = new Suchleiste();
+        s.setUberschrift(uberschrift);
+        s.setFilter(filter);
+        s.setOrt(ort);
+        s.setVerfugrbar(verfugbar);
+        s.setPersonenzahl(personenzahl);
+
+        return s;
     }
 }

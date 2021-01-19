@@ -1,6 +1,6 @@
-package com.example.application.views.Dashboard;
+package com.example.application.views.Dashboard.musterhaus;
 
-public class MusterhausDashboard {
+public class Musterhaus {
 
     private String bild0;
     private String name;
@@ -9,7 +9,7 @@ public class MusterhausDashboard {
     private String bewertung;
 
 
-    public MusterhausDashboard() {
+    public Musterhaus() {
     }
 
     public String getBild0() {

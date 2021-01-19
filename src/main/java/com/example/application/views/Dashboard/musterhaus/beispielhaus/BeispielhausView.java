@@ -1,4 +1,4 @@
-package com.example.application.views.Dashboard;
+package com.example.application.views.Dashboard.musterhaus.beispielhaus;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -10,19 +10,22 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.ui.TextArea;
 
 import java.util.Arrays;
 import java.util.List;
 
+
+@PageTitle("Beispielhaus") // z
 @Route(value = "beispielhaus") // gibt die route, aber wird nicht im dashboard angezeigt
 @CssImport(value = "./styles/views/beispielhaus/beispielhaus-view.css", include = "lumo-badge")
 @JsModule("@vaadin/vaadin-lumo-styles/badge.js")
 
 public class BeispielhausView extends Div implements AfterNavigationObserver {
 
-    Grid<Musterhaus> grid = new Grid<>();
+    Grid<Beispielhaus> grid = new Grid<>();
 
     public BeispielhausView() {
         setId("beispielhaus-view");
@@ -34,7 +37,7 @@ public class BeispielhausView extends Div implements AfterNavigationObserver {
         add(grid);
     }
 
-    private HorizontalLayout createCard(Musterhaus musterhaus) {
+    private HorizontalLayout createCard(Beispielhaus musterhaus) {
         HorizontalLayout card = new HorizontalLayout();
         card.addClassName("card");
         card.setSpacing(false);
@@ -78,16 +81,15 @@ public class BeispielhausView extends Div implements AfterNavigationObserver {
         hausbeschreibung.setSizeFull();
 
 
-        header.add(image0);
         //die karte sichrbar machen (bild)
-        card.add(image0);
+        card.add(image0,image1,image2,image3);
         return card;
     }
 
     //Bilder des Hauses Anzeige
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
-        List<Musterhaus> musterhaus = Arrays.asList( //
+        List<Beispielhaus> musterhaus = Arrays.asList( //
                 createMusterhaus("https://pngimg.com/uploads/house/house_PNG50.png",
                         "https://pngimg.com/uploads/house/house_PNG6.png",
                         "https://pngimg.com/uploads/house/house_PNG50.png",
@@ -97,8 +99,8 @@ public class BeispielhausView extends Div implements AfterNavigationObserver {
         grid.setItems(musterhaus);
 
     }
-    private static Musterhaus createMusterhaus(String bild0, String bild1, String bild2, String bild3) {
-        Musterhaus m= new Musterhaus();
+    private static Beispielhaus createMusterhaus(String bild0, String bild1, String bild2, String bild3) {
+        Beispielhaus m= new Beispielhaus();
         m.setBild0(bild0);
         m.setBild1(bild1);
         m.setBild2(bild2);
