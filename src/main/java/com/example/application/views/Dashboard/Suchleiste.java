@@ -5,9 +5,25 @@ public class Suchleiste {
     private String uberschrift;
     private String filter;
     private String ort;
-    private String verfugrbar;
+    private String verfugrbarvon;
+    private String verfugrbarbis;
     private String personenzahl;
 
+    public String getVerfugrbarvon() {
+        return verfugrbarvon;
+    }
+
+    public void setVerfugrbarvon(String verfugrbarvon) {
+        this.verfugrbarvon = verfugrbarvon;
+    }
+
+    public String getVerfugrbarbis() {
+        return verfugrbarbis;
+    }
+
+    public void setVerfugrbarbis(String verfugrbarbis) {
+        this.verfugrbarbis = verfugrbarbis;
+    }
 
     public Suchleiste() {
     }
@@ -36,13 +52,7 @@ public class Suchleiste {
         this.ort = ort;
     }
 
-    public String getVerfugrbar() {
-        return verfugrbar;
-    }
 
-    public void setVerfugrbar(String verfugrbar) {
-        this.verfugrbar = verfugrbar;
-    }
 
     public String getPersonenzahl() {
         return personenzahl;

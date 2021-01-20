@@ -1,0 +1,44 @@
+.buchen-view vaadin-grid {
+  line-height: var(--lumo-line-height-m);
+}
+
+.buchen-view vaadin-grid,
+.buchen-view vaadin-grid-cell-content {
+  background-color: var(--lumo-contrast-10pct);
+}
+
+.buchen-view .card {
+  background-color: var(--lumo-base-color);
+  border-radius: var(--lumo-border-radius);
+  box-shadow: var(--lumo-box-shadow-xs);
+  padding: calc(var(--lumo-space-s) * 1.5) var(--lumo-space-m);
+  display: block;
+}
+
+.buchen-view img {
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: var(--lumo-size-xl);
+  width: var(--lumo-size-xl);
+}
+
+.buchen-view .header {
+  align-items: baseline;
+}
+
+.buchen-view .uberschrift {
+  font-size: var(--lumo-font-size-xl);
+  font-weight: bold;
+}
+
+
+.buchen-view .actions {
+  align-items: center;
+}
+
+.buchen-view iron-icon {
+  color: var(--lumo-tertiary-text-color);
+  height: calc(var(--lumo-icon-size-s) * 0.8);
+  width: calc(var(--lumo-icon-size-s) * 0.8);
+}
+}

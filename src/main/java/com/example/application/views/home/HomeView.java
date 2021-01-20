@@ -76,6 +76,7 @@ public class HomeView extends Div implements AfterNavigationObserver {
         IronIcon commentIcon = new IronIcon("vaadin", "comment");
         Span comments = new Span(person.getComments());
         comments.addClassName("comments");
+
         IronIcon shareIcon = new IronIcon("vaadin", "connect");
         Span shares = new Span(person.getShares());
         shares.addClassName("shares");
@@ -93,7 +94,9 @@ public class HomeView extends Div implements AfterNavigationObserver {
         // Set some data when this view is displayed.
         List<Person> persons = Arrays.asList( //
         createPerson("https://randomuser.me/api/portraits/men/42.jpg", "John Smith", "May 8",
-                "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content (also called greeking).",
+                "In publishing and graphic \n design, Lorem ipsum is a placeholder \n text commonly used to demonstrate the visual form of a document without relying on meaningful content (also called greeking)." +
+                        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content (also called greeking)" +
+                        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content (also called greeking)",
                 "1K", "500", "20"),
         createPerson("https://randomuser.me/api/portraits/women/42.jpg", "Abagail Libbie", "May 3",
                 "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content (also called greeking).",

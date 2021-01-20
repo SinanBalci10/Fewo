@@ -3,8 +3,6 @@ package com.example.application.data.service;
 import com.example.application.data.entity.Role;
 import com.example.application.data.entity.User;
 import com.example.application.views.Dashboard.DashboardView;
-import com.example.application.views.Dashboard.musterhaus.MusterhausView;
-import com.example.application.views.Dashboard.musterhaus.beispielhaus.BeispielhausView;
 import com.example.application.views.EigeneFerienwohnung.EigeneFerienwohnungView;
 import com.example.application.views.KontoVerwalten.KontoVerwaltenView;
 import com.example.application.views.Mietverlauf.MietverlaufView;
@@ -65,16 +63,15 @@ public class AuthService {
         if (role.equals(Role.USER)) {
             routes.add(new AuthorizedRoute("home", "Home", HomeView.class));
             routes.add(new AuthorizedRoute("dashboard", "Dashboard", DashboardView.class));
-            routes.add(new AuthorizedRoute("musterhaus", "Musterhaus", MusterhausView.class));
-            routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", BeispielhausView.class));
-
+            //routes.add(new AuthorizedRoute("musterhaus", "Musterhaus", MusterhausView.class));
+            //routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", BeispielhausView.class));
             routes.add(new AuthorizedRoute("mietverlauf", "Mietverlauf", MietverlaufView.class));
             routes.add(new AuthorizedRoute("eigeneFerienwohnung", "Eigene Ferienwohnung", EigeneFerienwohnungView.class));
             routes.add(new AuthorizedRoute("kontoVerwalten", "Konto Verwalten", KontoVerwaltenView.class));
             routes.add(new AuthorizedRoute("postfach", "Postfach", PostfachView.class));
             routes.add(new AuthorizedRoute("nachrichtSenden", "Nachricht Senden", NachrichtSendenView.class));
             routes.add(new AuthorizedRoute("stornieren", "Stornieren", StornierenView.class));
-          //  routes.add(new AuthorizedRoute("abmelden", "Abmelden", LogoutView.class));
+          // routes.add(new AuthorizedRoute("abmelden", "Abmelden", LogoutView.class));
           //  routes.add(new AuthorizedRoute("beispielhaus", "Beispielhaus", Beispielhaus.class));
 
         } else if (role.equals(Role.ADMIN)) {

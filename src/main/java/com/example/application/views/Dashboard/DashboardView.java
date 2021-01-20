@@ -65,21 +65,24 @@ public class DashboardView<sample> extends Div implements AfterNavigationObserve
         Span filter = new Span(suchleiste.getFilter());
         filter.addClassName("filter");
 
-        //ort der karte
-        Span ort = new Span(suchleiste.getOrt());
-        ort.addClassName("ort");
+        var textfeldort = new com.vaadin.flow.component.textfield.TextField("Ort: ");
 
-        Span verfugbarkeit = new Span(suchleiste.getVerfugrbar());
-        verfugbarkeit.addClassName("verfugbarkeit");
 
-        Span personenzahl = new Span(suchleiste.getPersonenzahl());
-        personenzahl.addClassName("personenzahl");
+        var von = new com.vaadin.flow.component.datepicker.DatePicker("von");
 
+
+        var bis = new com.vaadin.flow.component.datepicker.DatePicker("bis");
+
+
+        var texfeldpersonen = new com.vaadin.flow.component.textfield.TextField("Personenzahl: ");
+
+
+        //wie sucht er mit der datenbank ???
         Button suchen = new Button("Suchen", event -> {
             UI.getCurrent().navigate("musterhaus");
         });
 
-        description.add(header, filter, ort, verfugbarkeit, personenzahl);
+        description.add(header, filter, textfeldort,  von  , bis, texfeldpersonen);
         //die karte sichrbar machen (bild und beschreibungen)
         card.add(description, suchen);
         return card;
@@ -88,19 +91,20 @@ public class DashboardView<sample> extends Div implements AfterNavigationObserve
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
         List<Suchleiste> suchleistes = Arrays.asList(
-               createSuchleiste("Häuser suchen","Filter","Ort", "Verfügbarkeit","Personenzahl")
+               createSuchleiste("Häuser suchen","Filter","Ort: ", "von: ","bis: ", "Personenzahl: ")
         );
 
         grid.setItems(suchleistes);
 
     }
 
-    private static Suchleiste createSuchleiste(String uberschrift, String filter, String ort, String verfugbar, String personenzahl) {
+    private static Suchleiste createSuchleiste(String uberschrift, String filter, String ort, String verfugbarvon,String verfugbarbis, String personenzahl) {
         Suchleiste s = new Suchleiste();
         s.setUberschrift(uberschrift);
         s.setFilter(filter);
         s.setOrt(ort);
-        s.setVerfugrbar(verfugbar);
+        s.setVerfugrbarvon(verfugbarvon);
+        s.setVerfugrbarbis(verfugbarbis);
         s.setPersonenzahl(personenzahl);
 
         return s;

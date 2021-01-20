@@ -6,10 +6,13 @@ public class Beispielhaus {
     private String bild1;
     private String bild2;
     private String bild3;
+    private String uberschrift;
+    private String beschreibung;
 
 
     public Beispielhaus() {
     }
+
 
 
     public String getBild0() {
@@ -39,6 +42,19 @@ public class Beispielhaus {
     public void setBild3(String bild3) {
         this.bild3 = bild3;
     }
+    public String getUberschrift() {
+        return uberschrift;
+    }
 
+    public void setUberschrift(String uberschrift) {
+        this.uberschrift = uberschrift;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
+    }
 
 }

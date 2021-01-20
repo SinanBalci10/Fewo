@@ -1,5 +1,6 @@
 .beispielhaus-view vaadin-grid {
   line-height: var(--lumo-line-height-m);
+
 }
 
 .beispielhaus-view vaadin-grid,
@@ -25,21 +26,19 @@
   align-items: baseline;
 }
 
-.beispielhaus-view .name {
-  font-size: var(--lumo-font-size-xl);
-  font-weight: bold;
+.beispielhaus-view .lage {
+  color: var(--lumo-secondary-text-color);
+  font-size: var(--lumo-font-size-s);
+  margin-bottom: var(--lumo-space-s);
+  white-space: normal;
 }
---.beispielhaus-view .date {
-  --color: var(--lumo-tertiary-text-color);
-  --font-size: var(--lumo-font-size-xs);
---}
 
---.beispielhaus-view .post {
-  --color: var(--lumo-secondary-text-color);
-  --font-size: var(--lumo-font-size-s);
-  --margin-bottom: var(--lumo-space-s);
-  --white-space: normal;
---}
+.beispielhaus-view .beschreibung {
+  color: var(--lumo-secondary-text-color);
+  font-size: var(--lumo-font-size-l);
+  margin-bottom: var(--lumo-space-l);
+  white-space: normal;
+}
 
 --.beispielhaus-view .actions {
  -- align-items: center;
