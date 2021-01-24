@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import java.time.LocalDate;
 
 //model class
+//ferienwohnung getby
 // muss also in database gespeichert werden
 @Entity
 public class Person extends AbstractEntity {

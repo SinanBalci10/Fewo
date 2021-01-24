@@ -38,6 +38,7 @@ public class AuthService {
         this.userRepository = userRepository;
     }
 
+    //void suche() wohnungsrepo
     public void authenticate(String username, String password) throws AuthException {
         User user = userRepository.getByUsername(username);
         if (user != null && user.checkPassword(password) && user.isActive()) {
