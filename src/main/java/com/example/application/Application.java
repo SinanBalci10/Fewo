@@ -17,12 +17,14 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Application.class, args);
 
 
 //        String url = "jdbc:mysql://localhost:3307/ferienwohnungdb";
 //        String user = "root";
 //        String password = "";
+        //ddddd
 //
 //        try (Connection conn = DriverManager.getConnection(url, user, password)) {
 //
