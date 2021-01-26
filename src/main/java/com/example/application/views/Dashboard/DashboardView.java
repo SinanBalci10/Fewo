@@ -38,11 +38,16 @@ public class DashboardView<sample> extends Div implements AfterNavigationObserve
         add(grid);
     }
 
+
+
+
     private HorizontalLayout createCard(Suchleiste suchleiste) {
         HorizontalLayout card = new HorizontalLayout();
         card.addClassName("card");
         card.setSpacing(false);
         card.getThemeList().add("spacing-s");
+
+
 
         //layout von der beschreibung in der karte
         VerticalLayout description = new VerticalLayout();
@@ -66,6 +71,9 @@ public class DashboardView<sample> extends Div implements AfterNavigationObserve
         filter.addClassName("filter");
 
         var textfeldort = new com.vaadin.flow.component.textfield.TextField("Ort: ");
+//        textfeldort.setPlaceholder("filter nach ort");
+//        textfeldort.setClearButtonVisible(true);
+//        textfeldort.addValueChangeListener(e -> card.s);
 
 
         var von = new com.vaadin.flow.component.datepicker.DatePicker("von");
@@ -87,6 +95,8 @@ public class DashboardView<sample> extends Div implements AfterNavigationObserve
         card.add(description, suchen);
         return card;
     }
+
+
 
     @Override
     public void afterNavigation(AfterNavigationEvent event) {

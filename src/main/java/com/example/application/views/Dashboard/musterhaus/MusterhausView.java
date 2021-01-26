@@ -112,10 +112,10 @@ public class MusterhausView<sample> extends Div implements AfterNavigationObserv
         );
 
         grid.setItems(musterhäuser);
-
     }
 
-    private static Musterhaus createMusterhausDashboard(String bild0, String name, String post, String preis, String bewertung) {
+    private static Musterhaus createMusterhausDashboard(String bild0, String name, String post, String
+            preis, String bewertung) {
         Musterhaus m = new Musterhaus();
         m.setBild0(bild0);
         m.setName(name);
@@ -125,7 +125,6 @@ public class MusterhausView<sample> extends Div implements AfterNavigationObserv
 
         return m;
     }
-
 
 
 }

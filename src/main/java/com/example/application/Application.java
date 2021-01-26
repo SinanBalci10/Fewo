@@ -18,6 +18,46 @@ public class Application extends SpringBootServletInitializer implements AppShel
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-    }
 
+
+//        String url = "jdbc:mysql://localhost:3307/ferienwohnungdb";
+//        String user = "root";
+//        String password = "";
+//
+//        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+//
+//            System.out.println("Erfolgreich verbunden");
+//
+//            //ausgeben
+//            // aufsteigend
+//            String query = "SELECT * FROM fewo WHERE ort = \"Lübeck\"";
+//            Statement stmt = conn.createStatement();
+//            ResultSet rs = stmt.executeQuery(query);
+//
+//
+//            //überschriften
+//            int columns = rs.getMetaData().getColumnCount();
+//            for(int i = 1; i <= columns; i++){
+//                System.out.print(String.format("%-15s", rs.getMetaData().getColumnLabel(i)));
+//            }
+//            System.out.println();
+//            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+//
+//            while (rs.next()){
+//                for(int i = 1; i <= columns; i++){
+//                    System.out.print(String.format("%-15s", rs.getString(i)));
+//                }
+//                System.out.println();
+//
+//            }
+//            rs.close();
+//            stmt.close();
+//
+//        } catch (SQLException ex) {
+//            System.err.println(ex.getMessage());
+//        }
+//    }
+
+
+    }
 }
