@@ -5,7 +5,7 @@ import com.example.application.data.AbstractEntity;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 public class User extends AbstractEntity {
@@ -17,8 +17,19 @@ public class User extends AbstractEntity {
     //    private String email;
     //    private String wohnort;
 
-    //@Id
-   // private Integer id;
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String username;
     private String passwordSalt;
     private String passwordHash;

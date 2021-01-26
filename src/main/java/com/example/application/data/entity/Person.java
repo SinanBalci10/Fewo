@@ -2,16 +2,15 @@ package com.example.application.data.entity;
 
 import com.example.application.data.AbstractEntity;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDate;
 
-//model class
-//ferienwohnung getby
-// muss also in database gespeichert werden
+
 @Entity
 public class Person extends AbstractEntity {
 
-    //primary key @Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
@@ -20,6 +19,11 @@ public class Person extends AbstractEntity {
     private LocalDate dateOfBirth;
 
     //private String occupation;
+
+    public Person() {
+
+    }
+
     public Integer getId() {
         return id;
     }

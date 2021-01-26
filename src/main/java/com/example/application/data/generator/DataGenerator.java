@@ -2,10 +2,10 @@ package com.example.application.data.generator;
 
 import com.example.application.data.entity.Role;
 import com.example.application.data.entity.User;
-import com.example.application.data.service.UserRepository;
+import com.example.application.data.service.repository.UserRepository;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 
-import com.example.application.data.service.PersonRepository;
+import com.example.application.data.service.repository.PersonRepository;
 import com.example.application.data.entity.Person;
 
 
