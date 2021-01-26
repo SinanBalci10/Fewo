@@ -1,4 +1,4 @@
-package com.example.application.views.dashboard.musterhaus.beispielhaus.Buchen;
+package com.example.application.views.dashboard.musterhaus.beispielhaus.buchen;
 
 public class Buchen {
 

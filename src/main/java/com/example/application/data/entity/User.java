@@ -10,26 +10,7 @@ import javax.persistence.*;
 @Entity
 public class User extends AbstractEntity {
 
-    //private Integer id;
-    //    private String name;
-    //    private String username;
-    //    private String passwort;
-    //    private String email;
-    //    private String wohnort;
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     private String username;
     private String passwordSalt;
     private String passwordHash;
@@ -52,13 +33,6 @@ public class User extends AbstractEntity {
         return DigestUtils.sha1Hex(password + passwordSalt).equals(passwordHash);
     }
 
-//    public Integer getid() {
-//        return id;
-//    }
-
-//    public void setid(Integer id) {
-//        this.username = username;
-//    }
 
     public String getUsername() {
         return username;

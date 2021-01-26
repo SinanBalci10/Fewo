@@ -1,17 +1,12 @@
 package com.example.application.data.entity;
 
+import com.example.application.data.AbstractEntity;
+
 import javax.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class Fewo {
+public class Fewo extends AbstractEntity {
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getPersonen() {
         return personen;
@@ -57,9 +52,6 @@ public class Fewo {
 
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //id autoincrement um 1
-    private Integer id;
     private Integer personen;
     private String ort;
     private Integer sterne;

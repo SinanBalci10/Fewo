@@ -33,7 +33,7 @@ public class DataGenerator {
 
             logger.info("... generating 100 Person entities...");
             ExampleDataGenerator<Person> personRepositoryGenerator = new ExampleDataGenerator<>(Person.class);
-            personRepositoryGenerator.setData(Person::setId, DataType.ID);
+            //personRepositoryGenerator.setData(Person::setId, DataType.ID);
             personRepositoryGenerator.setData(Person::setFirstName, DataType.FIRST_NAME);
             personRepositoryGenerator.setData(Person::setLastName, DataType.LAST_NAME);
             personRepositoryGenerator.setData(Person::setEmail, DataType.EMAIL);

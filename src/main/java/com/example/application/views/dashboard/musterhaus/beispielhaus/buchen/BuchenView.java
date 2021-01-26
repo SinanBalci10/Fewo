@@ -1,4 +1,4 @@
-package com.example.application.views.dashboard.musterhaus.beispielhaus.Buchen;
+package com.example.application.views.dashboard.musterhaus.beispielhaus.buchen;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
